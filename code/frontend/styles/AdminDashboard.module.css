@@ -1,0 +1,148 @@
+.page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-m);
+}
+
+.dashboard {
+  width: 100%;
+  max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.topBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.section {
+  padding: var(--space-l);
+  background: var(--color-surface);
+  border: 1px solid var(--color-primary-strong);
+  border-radius: var(--radius);
+}
+
+.sectionHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.filters {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.filter {
+  padding: var(--space-xs) var(--space-m);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.filter[aria-current="page"] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.muted {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.empty {
+  margin: var(--space-l) 0 0;
+  color: var(--color-muted);
+}
+
+.day {
+  margin-top: var(--space-l);
+}
+
+.dayHeading {
+  margin: 0 0 var(--space-s);
+  font-size: 1rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 11.5rem 1fr auto;
+  gap: var(--space-m);
+  padding: var(--space-m);
+  border: 1px solid var(--color-primary);
+  border-radius: calc(var(--radius) / 2);
+}
+
+.time {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.contact {
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.contact a {
+  color: var(--color-accent);
+}
+
+.price {
+  font-weight: 700;
+}
+
+.badge {
+  align-self: flex-start;
+  padding: 0 var(--space-s);
+  border-radius: 999px;
+  background: var(--color-primary);
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+@media (max-width: 36rem) {
+  .item {
+    grid-template-columns: 1fr auto;
+  }
+  .details {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}

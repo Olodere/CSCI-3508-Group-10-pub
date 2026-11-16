@@ -1,0 +1,72 @@
+Project Overview
+Project Name
+Nail Salon Appointment Scheduler
+Project Description
+The Nail Salon Appointment Scheduler is a web-based booking system designed for a small, single-technician nail salon located in Aurora, Colorado. The system will allow customers to browse available nail services, view appointment availability, choose between in-salon and at-home appointments, and book without creating an account.
+For at-home appointments, customers will provide a service address and the system will apply an appropriate travel fee. The salon owner will use an administrative interface to manage appointments, services, pricing, and recurring or custom availability.
+The initial version of the system will focus on appointment scheduling and salon management. Payment will occur at the appointment. Features such as online payment and advanced email or text notifications may be added in future versions.
+Problem Statement
+Small, independently operated salons often rely on phone calls, text messages, or social media messages to manage appointments. This can make scheduling inefficient and increase the chance of missed messages, scheduling conflicts, or double-booking.
+The problem becomes more complicated when the technician offers both in-salon and at-home services because the system must also account for customer location, travel requirements, and travel fees.
+The proposed system will provide a centralized booking platform that allows customers to view available services and appointment times while giving the salon owner direct control over services, availability, and scheduled appointments.
+Project Purpose
+The purpose of this project is to design and develop a simple appointment scheduling system that improves the booking process for both customers and the salon owner.
+The system is intended to:
+Make the customer booking process faster and easier.
+Allow customers to book without creating an account.
+Provide accurate appointment availability.
+Reduce the possibility of double-booking.
+Support both in-salon and at-home appointments.
+Allow the salon owner to manage services, pricing, appointments, and availability from one location.
+Provide a foundation that can support additional features in future versions.
+Target Users
+The system has two primary types of users.
+Customer
+Customers use the public portion of the website to:
+View salon information and available services.
+View service pricing.
+View available appointment times.
+Choose between in-salon and at-home appointments.
+Submit contact information when booking.
+Provide an address for at-home appointments.
+View applicable travel fees.
+Book an appointment without creating an account.
+Cancel an existing appointment.
+Salon Owner / Administrator
+The salon owner is currently the only nail technician and will also serve as the system administrator.
+The administrator will be able to:
+Securely access the administrative portion of the system.
+View and manage appointments.
+View relevant customer information.
+Add, edit, and remove services.
+Manage service pricing.
+Set a default weekly availability schedule.
+Modify availability for specific dates or schedule changes.
+Manage the technician schedule.
+Project Scope
+The first version of the system will focus on the core functionality required to operate a small appointment-based nail salon.
+In Scope
+The initial system will include:
+Displaying salon and service information.
+Displaying service pricing.
+Supporting custom nail requests.
+Supporting in-salon appointments.
+Supporting at-home appointments.
+Collecting customer contact information.
+Collecting service addresses for at-home appointments.
+Applying travel fees to at-home appointments.
+Displaying available appointment times.
+Preventing double-booking.
+Booking without a customer account.
+Customer appointment cancellation.
+Administrative appointment management.
+Service and pricing management.
+Recurring and custom availability management.
+Payment at the time of the appointment.
+Future or Optional Scope
+The following features may be implemented after the core system is complete:
+Online payment before an appointment.
+Email appointment notifications.
+SMS/text appointment notifications.
+Additional advanced booking or customer-account
+

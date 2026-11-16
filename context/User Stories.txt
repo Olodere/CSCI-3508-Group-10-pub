@@ -1,0 +1,140 @@
+User Roles
+The system currently has two primary user roles:
+Customer
+A customer uses the public website to view services, check availability, and schedule or cancel an appointment. Customers do not need to create an account.
+Salon Owner / Administrator
+The salon owner is the system administrator and the only nail technician in the initial version of the system. The administrator manages appointments, services, pricing, and availability.
+
+Customer User Stories
+US-01: View Services
+As a customer, I want to view the services offered by the salon so that I can decide which service I want to book.
+Acceptance Criteria
+The customer can view available nail services.
+Service information is visible before the customer books an appointment.
+Pricing is displayed when available.
+US-02: Request Custom Nails
+As a customer, I want to request a custom nail design so that I can receive a service that matches the design I want.
+Acceptance Criteria
+The customer has a way to indicate that the appointment involves a custom request.
+The request is stored with the appointment.
+Additional details concerning images, pricing, and duration will depend on the final custom-request requirements.
+US-03: Choose Appointment Type
+As a customer, I want to choose between an in-salon or at-home appointment so that I can receive the service at the location that works for me.
+Acceptance Criteria
+The customer can select either in-salon or at-home.
+The selected appointment type is stored with the booking.
+US-04: View Available Appointments
+As a customer, I want to see available appointment times so that I can choose a time that works for me.
+Acceptance Criteria
+Only available appointment times are shown.
+Already-booked appointment times cannot be selected.
+Availability reflects the technician's schedule.
+US-05: Book Without an Account
+As a customer, I want to book an appointment without creating an account so that the booking process is fast and simple.
+Acceptance Criteria
+No customer login or registration is required.
+The customer can provide the required contact information during booking.
+The booking is saved after the required information has been submitted.
+US-06: Book an At-Home Appointment
+As a customer, I want to provide my service address when booking an at-home appointment so that the technician knows where the appointment will take place.
+Acceptance Criteria
+An address is required for at-home appointments.
+An address is not required for an in-salon appointment.
+The address is stored with the appropriate booking.
+US-07: View Travel Fee
+As a customer booking an at-home appointment, I want to know the travel fee associated with my location so that I understand the cost of the appointment before confirming it.
+Acceptance Criteria
+The system determines a travel fee for an at-home booking.
+The customer can see the applicable travel fee.
+The final calculation method will depend on the travel-fee model selected by the group.
+US-08: Cancel an Appointment
+As a customer, I want to cancel my appointment so that I can release the appointment time if I can no longer attend.
+Acceptance Criteria
+The customer can cancel an existing appointment.
+A cancelled appointment is no longer considered an active booking.
+The appointment time becomes available again when appropriate.
+Additional cancellation-policy rules will depend on requirements established by the salon owner.
+
+Administrator User Stories
+US-09: Admin Login
+As the salon owner, I want to securely log in to the administrative system so that customers cannot access management functionality.
+Acceptance Criteria
+Administrative pages require authentication.
+Unauthorized users cannot access administrative functions.
+US-10: View Appointments
+As the salon owner, I want to view booked appointments and customer information so that I can prepare for upcoming appointments.
+Acceptance Criteria
+The administrator can view scheduled appointments.
+Relevant customer information is associated with each appointment.
+The appointment type is visible.
+US-11: Manage Appointments
+As the salon owner, I want to manage appointments so that I can respond to schedule changes.
+Acceptance Criteria
+The administrator can view appointment information.
+The system reflects appointment changes consistently in the available schedule.
+US-12: Manage Services
+As the salon owner, I want to add, edit, and remove services so that the website accurately represents the services I currently offer.
+Acceptance Criteria
+The administrator can add a service.
+The administrator can edit a service.
+The administrator can remove a service.
+Changes are reflected in the customer-facing service list.
+US-13: Manage Pricing
+As the salon owner, I want to update service prices so that customers see current pricing information.
+Acceptance Criteria
+The administrator can change the price associated with a service.
+Updated pricing is displayed to customers.
+US-14: Set Weekly Availability
+As the salon owner, I want to define a default weekly availability schedule so that customers can only book appointments during my normal working hours.
+Acceptance Criteria
+The administrator can define recurring available times.
+Customers only see bookable times that fall within the technician's availability.
+US-15: Adjust Availability
+As the salon owner, I want to modify my availability for specific dates so that changes to my schedule are reflected in the booking system.
+Acceptance Criteria
+The administrator can make changes that override normal weekly availability.
+Unavailable times cannot be booked by customers.
+
+Primary Use Cases
+The initial system design should support the following major use cases.
+Customer Use Cases
+View salon information
+View services
+View service pricing
+Request custom nails
+View appointment availability
+Select appointment type
+Enter customer information
+Enter an at-home service address
+View applicable travel fee
+Book an appointment
+Cancel an appointment
+Administrator Use Cases
+Log in
+View appointments
+Manage appointments
+Manage services
+Manage prices
+Set recurring availability
+Set custom availability
+Manage technician schedule
+Main Booking Use Case
+Actor: Customer
+Goal: Schedule a nail appointment.
+Basic Flow:
+The customer views available nail services.
+The customer selects a service or indicates a custom request.
+The customer selects either an in-salon or at-home appointment.
+The customer views available appointment times.
+The customer selects an available appointment time.
+The customer enters their name and contact information.
+If the appointment is at-home, the customer enters the service address.
+The system determines the applicable travel fee for an at-home appointment.
+The customer reviews the appointment information.
+The customer confirms the booking.
+The system saves the appointment and removes that appointment time from the available schedule.
+Alternative Flow — Appointment Time Becomes Unavailable:
+If the selected appointment time is no longer available before the booking is completed, the system does not create the appointment and the customer must select another available time.
+Alternative Flow — In-Salon Appointment:
+If the customer selects an in-salon appointment, a service address and travel fee are not required.
+

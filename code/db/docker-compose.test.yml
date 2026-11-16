@@ -1,0 +1,48 @@
+# docker-compose.test.yml
+services:
+  db:
+    build:
+      context: .
+      dockerfile: docker/postgres-test.Dockerfile
+    container_name: nailsalon_db_test
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: nailsalon
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U myuser -d nailsalon"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+    networks:
+      - test-net
+
+  tests:
+    build:
+      context: .
+      dockerfile: docker/postgres-test.Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGHOST: db
+      PGUSER: myuser
+      PGPASSWORD: mypassword
+      PGDATABASE: nailsalon
+    volumes:
+      - ./init.sql:/work/init.sql:ro
+      - ./migrations:/work/migrations:ro
+      - ./seeds:/work/seeds:ro
+      - ./tests:/work/tests:ro
+      - ./docker/run-tests.sh:/work/run-tests.sh:ro
+    entrypoint: ["/bin/bash", "/work/run-tests.sh"]
+    networks:
+      - test-net
+
+networks:
+  test-net:
+    name: nailsalon_test_net
+    driver: bridge

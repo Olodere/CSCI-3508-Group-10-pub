@@ -1,0 +1,39 @@
+.hero {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Darkens the photo so white text stays readable on any image. */
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-m);
+  min-height: 70vh;
+  padding: var(--space-xxl) var(--space-m);
+  background: rgb(74 44 50 / 0.6); /* --color-text at 60% */
+  color: #fff;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-script);
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-m);
+  margin-top: var(--space-s);
+}

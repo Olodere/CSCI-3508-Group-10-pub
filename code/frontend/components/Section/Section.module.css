@@ -1,0 +1,24 @@
+.section {
+  padding: var(--space-xxl) var(--space-m);
+}
+
+.alt {
+  background: var(--color-surface);
+}
+
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 var(--space-l);
+  font-size: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .section {
+    padding: var(--space-xxxl) var(--space-l);
+  }
+}

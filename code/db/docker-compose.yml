@@ -1,0 +1,51 @@
+# docker-compose.yml
+services:
+  db:
+    image: postgres:17.11-alpine
+    container_name: nailsalon_db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: nailsalon
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./seeds:/seeds:ro
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U myuser -d nailsalon"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    networks:
+      - dev-net
+
+  migrate:
+    image: amacneil/dbmate:2
+    environment:
+      DATABASE_URL: postgres://myuser:mypassword@db:5432/nailsalon?sslmode=disable
+      # dbmate's default migrations dir is ./db/migrations relative to CWD.
+      # We mount the host's migrations at /db/migrations, so point dbmate
+      # there explicitly rather than relying on working_dir tricks.
+      DBMATE_MIGRATIONS_DIR: /db/migrations
+      # The migrations volume is mounted read-only, so suppress dbmate's
+      # default behavior of writing schema.sql into that directory.
+      DBMATE_NO_DUMP_SCHEMA: "true"
+    volumes:
+      - ./migrations:/db/migrations:ro
+    working_dir: /db
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["dbmate wait && dbmate up"]
+    networks:
+      - dev-net
+
+volumes:
+  postgres_data:
+
+networks:
+  dev-net:
+    name: nailsalon_dev_net
+    driver: bridge

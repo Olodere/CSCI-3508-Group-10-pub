@@ -1,0 +1,74 @@
+Functional Requirements
+The system will provide the following functionality for customers and the salon owner.
+Customer Requirements
+FR-01: View Services
+Customers shall be able to view the nail services offered by the salon, including service descriptions and pricing when available.
+FR-02: Custom Nail Requests
+Customers shall be able to request custom nail services or designs. The exact process for submitting a custom request, including whether customers may upload reference images and whether custom requests affect price or appointment duration, still needs to be determined.
+FR-03: Appointment Type
+Customers shall be able to choose between an in-salon appointment and an at-home appointment.
+FR-04: View Availability
+Customers shall be able to view available appointment times before booking an appointment.
+FR-05: Book Without an Account
+Customers shall be able to book an appointment without creating a user account. The booking process should require only the information necessary to create and manage the appointment.
+FR-06: Customer Information
+The system shall collect the customer's name and contact information when an appointment is booked.
+FR-07: At-Home Address
+For an at-home appointment, the system shall collect the customer's service address.
+FR-08: Travel Fee
+The system shall apply an appropriate travel fee to at-home appointments based on the customer's service location. The exact travel-fee calculation model still needs to be determined.
+FR-09: Appointment Cancellation
+Customers shall be able to cancel their own appointments. The exact cancellation deadline or cancellation policy still needs to be determined.
+Administrative Requirements
+FR-10: Admin Authentication
+The salon owner shall have access to a secure administrative interface.
+FR-11: Manage Appointments
+The salon owner shall be able to view and manage booked appointments and relevant customer information.
+FR-12: Manage Services
+The salon owner shall be able to add, edit, and remove nail services and service prices.
+FR-13: Manage Default Availability
+The salon owner shall be able to define a default weekly availability schedule.
+FR-14: Manage Custom Availability
+The salon owner shall be able to modify availability when the regular weekly schedule changes.
+FR-15: Prevent Double-Booking
+The system shall prevent more than one customer from booking the same appointment time.
+FR-16: Technician Schedule
+The administrative system shall support management of the technician's schedule. The initial version of the system will support one technician, who is also the salon owner.
+Nonfunctional Requirements
+Usability
+The website should be simple and easy to use, particularly during the booking process. Customers should be able to book an appointment without creating an account.
+Performance
+Pages and available appointment information should load quickly enough to provide a responsive booking experience.
+Security and Privacy
+Administrative functionality shall require authentication. Customer contact information and at-home service addresses shall be protected from unauthorized access.
+Reliability
+Appointment availability shall remain consistent between customers and the administrative interface. The system shall prevent double-booking.
+Maintainability
+The software should be organized so that services, availability, and other business rules can be updated without requiring major changes to unrelated parts of the system.
+Scalability and Future Development
+The system should be designed so that additional functionality, including online payments and email or text notifications, can be added in future versions.
+Initial Release
+The initial release will focus on the core booking system. Customers will be able to browse services, choose between in-salon and at-home appointments, view available appointment times, submit their information, and create an appointment without creating an account.
+The salon owner will be able to manage appointments, services, pricing, and recurring or custom availability through an administrative interface.
+Payment will occur at the appointment in the initial version of the system.
+Future Enhancements
+The following features are currently considered future enhancements rather than requirements for the initial release:
+Online payment before an appointment
+Email appointment notifications
+Text/SMS appointment notifications
+Open Requirements Questions
+The following requirements still need additional clarification before implementation:
+Custom nail requests
+How will customers describe a custom nail design?
+Will customers be able to upload reference photos?
+Can a custom request change the appointment price?
+Can a custom request change the appointment duration?
+Travel fees
+Will the travel fee use a flat fee, distance calculation, or radius-based zones?
+What location will be used as the salon's base address?
+Will there be a maximum distance for at-home appointments?
+Cancellation
+Is there a deadline for customer cancellations?
+Should the salon owner receive a notification when an appointment is cancelled?
+What information will customers need in order to cancel a booking?
+

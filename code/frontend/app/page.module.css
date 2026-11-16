@@ -1,0 +1,9 @@
+.main {
+  flex: 1;
+}
+
+.loading {
+  padding: var(--space-xxl) var(--space-m);
+  text-align: center;
+  color: var(--color-muted);
+}
